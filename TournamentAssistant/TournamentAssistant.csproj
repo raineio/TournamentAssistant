@@ -153,118 +153,22 @@
   <ItemGroup>
     <Compile Include="Behaviors\AntiFail.cs" />
     <Compile Include="Behaviors\AntiPause.cs" />
-    <Compile Include="Behaviors\FloatingScoreScreen.cs" />
     <Compile Include="Behaviors\ScoreMonitor.cs" />
     <Compile Include="Behaviors\SyncHandler.cs" />
     <Compile Include="Behaviors\ScreenOverlay.cs" />
     <Compile Include="Interop\CustomNotesInterop.cs" />
-    <Compile Include="Interop\ScoreSaberInterop.cs" />
-    <Compile Include="UI\CustomListItems\SongListItem.cs" />
     <Compile Include="PluginClient.cs" />
-    <Compile Include="UI\CustomListItems\GenericItem.cs" />
-    <Compile Include="UI\FlowCoordinators\EventSelectionCoordinator.cs" />
-    <Compile Include="UI\FlowCoordinators\FlowCoordinatorWithScrapedInfo.cs" />
-    <Compile Include="UI\ViewControllers\CustomLeaderboard.cs" />
-    <Compile Include="UI\ViewControllers\IPConnection.cs" />
-    <Compile Include="UI\ViewControllers\ItemSelection.cs" />
-    <Compile Include="UI\ViewControllers\OngoingGameList.cs" />
-    <Compile Include="UI\ViewControllers\PatchNotes.cs" />
-    <Compile Include="UI\ViewControllers\PlayerList.cs" />
-    <Compile Include="UI\ViewControllers\RoomSelection.cs" />
-    <Compile Include="UI\ViewControllers\ServerModeSelection.cs" />
-    <Compile Include="UI\ViewControllers\ServerSelection.cs" />
-    <Compile Include="UI\ViewControllers\SongDetail.cs" />
-    <Compile Include="UI\ViewControllers\SongSelection.cs" />
-    <Compile Include="UI\ViewControllers\SplashScreen.cs" />
-    <Compile Include="UI\ViewControllers\TeamSelection.cs" />
     <Compile Include="Utilities\ParallelCoroutine.cs" />
     <Compile Include="Utilities\ReflectionUtil.cs" />
     <Compile Include="Utilities\UnityMainThreadDispatcher.cs" />
-    <Compile Include="UI\CustomListItems\PlayerCellInfo.cs" />
-    <Compile Include="UI\CustomListItems\MatchCellInfo.cs" />
-    <Compile Include="UI\CustomListItems\MatchListItem.cs" />
-    <Compile Include="UI\CustomListItems\ServerListItem.cs" />
-    <Compile Include="UI\CustomListItems\TeamListItem.cs" />
-    <Compile Include="UI\FlowCoordinators\IFinishableFlowCoordinator.cs" />
-    <Compile Include="UI\FlowCoordinators\FlowCoordinatorWithClient.cs" />
-    <Compile Include="UI\FlowCoordinators\QualifierCoordinator.cs" />
-    <Compile Include="UI\FlowCoordinators\RoomCoordinator.cs" />
-    <Compile Include="UI\FlowCoordinators\RoomSelectionCoordinator.cs" />
-    <Compile Include="UI\FlowCoordinators\ServerSelectionCoordinator.cs" />
     <Compile Include="Utilities\PlayerUtils.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\SongDownloader.cs" />
-    <Compile Include="UI\FlowCoordinators\ModeSelectionCoordinator.cs" />
     <Compile Include="Utilities\SongUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="manifest.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\CustomLeaderboard.bsml">
-      <DependentUpon>CustomLeaderboard.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\IPConnection.bsml">
-      <DependentUpon>IPConnection.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\ItemSelection.bsml">
-      <DependentUpon>ItemSelection.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\OngoingGameList.bsml">
-      <DependentUpon>OngoingGameList.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\PlayerList.bsml">
-      <DependentUpon>PlayerList.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\RoomSelection.bsml">
-      <DependentUpon>RoomSelection.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\ServerModeSelection.bsml">
-      <DependentUpon>ServerModeSelection.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\ServerSelection.bsml">
-      <DependentUpon>ServerSelection.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\SongDetail.bsml">
-      <DependentUpon>SongDetail.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\SongSelection.bsml">
-      <DependentUpon>SongSelection.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\SplashScreen.bsml">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\TeamSelection.bsml">
-      <DependentUpon>TeamSelection.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="UI\ViewControllers\PatchNotes.bsml">
-      <DependentUpon>PatchNotes.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TournamentAssistantShared\TournamentAssistantShared.csproj">
@@ -274,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets" Condition="Exists('..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets')" />
