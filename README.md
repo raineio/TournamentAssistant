@@ -20,8 +20,15 @@ https://github.com/MatrikMoon/TournamentAssistant/wiki/How-to-Host-a-Server-on-L
 #### Windows
 https://github.com/MatrikMoon/TournamentAssistant/wiki/How-to-Host-a-Server-on-Windows
 
-## Contributing
-Pull requests are welcome! Feel free to dm me on discord if you have any questions or concerns!
+## Contributing?
+Awesome!
+Pull requests are welcome! Feel free to DM [Moon](https://discord.com/users/229408465787944970) on Discord if you have any questions or concerns!
+
+General guidelines:
+ - Make sure the plugin has been thoroughly tested.
+ - Changes have to be reasoned (either in the PR, or through DMs with Moon)
+
+Reasons these things are important is that this plugin is used by a lot of people, therefore it has to be tested properly!
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license.
