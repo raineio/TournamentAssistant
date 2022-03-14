@@ -12,6 +12,7 @@ using UnityEngine;
 using static TournamentAssistantShared.Models.GameplayModifiers;
 using static TournamentAssistantShared.Models.PlayerSpecificSettings;
 using Logger = TournamentAssistantShared.Logger;
+using SiraUtil.Submissions;
 
 namespace TournamentAssistant
 {
@@ -22,12 +23,14 @@ namespace TournamentAssistant
         public event Func<IPreviewBeatmapLevel, BeatmapCharacteristicSO, BeatmapDifficulty, GameplayModifiers,
             PlayerSpecificSettings, OverrideEnvironmentSettings, ColorScheme, bool, bool, bool, bool, Task> PlaySong;
 
-        public PluginClient(string endpoint, int port, string username, string userId,
-            Connect.ConnectTypes connectType = Connect.ConnectTypes.Player) : base(endpoint, port, username,
+        private Submission _submission;
+        
+        public PluginClient(string endpoint, int port, string username, string userId, Submission submission, Connect.ConnectTypes connectType = Connect.ConnectTypes.Player) : base(endpoint, port, username,
             connectType, userId)
         {
+            _submission = submission;
         }
-
+        
         protected override async Task Client_PacketReceived(Packet packet)
         {
             await base.Client_PacketReceived(packet);
@@ -114,7 +117,7 @@ namespace TournamentAssistant
 
                 //Disable score submission if nofail is on. This is specifically for Hidden Sabers, though it may stay longer
                 if (playSong.DisableScoresaberSubmission)
-                    BS_Utils.Gameplay.ScoreSubmission.DisableSubmission(SharedConstructs.Name);
+                    _submission.DisableScoreSubmission(SharedConstructs.Name);
                 if (playSong.ShowNormalNotesOnStream)
                 {
                     var customNotes = IPA.Loader.PluginManager.GetPluginFromId("CustomNotes");

@@ -20,6 +20,19 @@ https://github.com/MatrikMoon/TournamentAssistant/wiki/How-to-Host-a-Server-on-L
 #### Windows
 https://github.com/MatrikMoon/TournamentAssistant/wiki/How-to-Host-a-Server-on-Windows
 
+### Developing a mod that should work with NJS in TA?
+````csharp
+using TournamentAssistant.Interop;
+
+namespace YourMod
+{
+    public void OnTANoteJumpSpeedUpdate()
+    {
+        YourMethod += Interop.NoteJumpSpeedAPI();
+    }
+}
+````
+
 ## Contributing?
 Awesome!
 Pull requests are welcome! Feel free to DM [Moon](https://discord.com/users/229408465787944970) on Discord if you have any questions or concerns!

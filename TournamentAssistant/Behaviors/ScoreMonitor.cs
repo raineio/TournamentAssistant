@@ -19,7 +19,7 @@ namespace TournamentAssistant.Behaviors
         private Guid[] destinationPlayers;
 
         private int _lastScore = 0;
-        private int _scoreUpdateFrequency = Plugin.client.State.ServerSettings.ScoreUpdateFrequency;
+        private int _scoreUpdateFrequency; // TODO: Have moon fix this. It's required.
         private int _scoreCheckDelay = 0;
 
         void Awake()
@@ -61,7 +61,7 @@ namespace TournamentAssistant.Behaviors
             player.Combo = combo;
             player.Accuracy = accuracy;
             player.SongPosition = time;
-            var playerUpdate = new Event
+            var playerUpdate = new Event // TODO: Have moon fix this as well, borked
             {
                 player_updated_event = new Event.PlayerUpdatedEvent
                 {

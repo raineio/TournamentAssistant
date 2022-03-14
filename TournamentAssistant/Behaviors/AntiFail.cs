@@ -3,6 +3,7 @@ using System.Linq;
 using TournamentAssistant.Utilities;
 using TournamentAssistantShared;
 using UnityEngine;
+using SiraUtil.Submissions;
 
 /**
  * Created by Moon on 6/13/2020
@@ -23,6 +24,8 @@ namespace TournamentAssistant.Behaviors
         private float _nextFrameEnergyChange;
         private float _oldObstacleEnergyDrainPerSecond;
         private bool _wouldHaveFailed = false;
+
+        private Submission _submission;
 
         void Awake()
         {
@@ -130,7 +133,7 @@ namespace TournamentAssistant.Behaviors
                     if (currentEnergy <= 1E-05f)
                     {
                         _wouldHaveFailed = true;
-                        BS_Utils.Gameplay.ScoreSubmission.DisableSubmission(SharedConstructs.Name); //Probably not necessary since we invoke fail anyway on level end, but just to be safe...
+                        _submission.DisableScoreSubmission(SharedConstructs.Name, "Failed the map"); //Probably not necessary since we invoke fail anyway on level end, but just to be safe...
                     }
                 }
 
